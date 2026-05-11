@@ -4,6 +4,7 @@
 * Updated: Oct 04 2025 with Bootstrap v5.3.8
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
+* Alterado por: Diego Soares da Paz para a disciplina Web mobile 
 */
 
 @charset "UTF-8";
@@ -4238,4 +4239,166 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+/* ============================================================
+   PERSONALIZAÇÕES - PORTFÓLIO DIEGO PAZ
+   ============================================================ */
+
+/* 1. NOVAS CORES PRINCIPAIS */
+:root {
+  --accent-color: #2563EB;        /* Azul royal */
+  --background-color: #0F172A;    /* Slate 900 */
+  --surface-color: #1E293B;       /* Slate 800 */
+  --heading-color: #F8FAFC;       /* Slate 50 */
+  --default-color: #CBD5E1;       /* Slate 300 */
+  --contrast-color: #ffffff;
+  --nav-color: #CBD5E1;
+  --nav-hover-color: #60A5FA;
+  --nav-mobile-background-color: #1E293B;
+  --nav-dropdown-background-color: #1E293B;
+  --nav-dropdown-color: #CBD5E1;
+  --nav-dropdown-hover-color: #60A5FA;
+}
+
+.dark-background {
+  --background-color: #070B14;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #1a1f2e;
+  --contrast-color: #ffffff;
+}
+
+/* 2. TIPOGRAFIA */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 2rem;
+  }
+}
+
+/* 3. BOTÕES */
+.btn-getstarted,
+.btn-getstarted:focus {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  border: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-getstarted:hover {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* 4. LINKS */
+a {
+  color: #60A5FA;
+}
+
+a:hover {
+  color: #93C5FD;
+}
+
+/* 5. CARDS */
+.services .service-item {
+  background: var(--surface-color);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.services .service-item:hover {
+  border-color: #2563EB;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+  transform: translateY(-5px);
+}
+
+.services .service-item:hover .icon-wrapper {
+  background: #2563EB;
+  color: white;
+}
+
+.services .icon-wrapper {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563EB;
+  border-radius: 12px;
+}
+
+/* 6. HERO */
+.hero h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.hero p span {
+  color: #60A5FA;
+  border-bottom: 2px solid #60A5FA;
+}
+
+/* 7. PROFILE */
+.about .profile-card .profile-header .profile-avatar {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+}
+
+.about .profile-card .profile-stats .stat-item h4 {
+  color: #2563EB;
+}
+
+.about .content-wrapper .skills-showcase .skills-list .skill-item .progress .progress-bar {
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
+}
+
+/* 8. CONTATO */
+.contact .php-email-form button[type=submit] {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+}
+
+/* 9. SCROLL TOP */
+.scroll-top {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+}
+
+/* 10. PRELOADER */
+#preloader:before {
+  border-color: #2563EB transparent #2563EB transparent;
 }

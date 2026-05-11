@@ -582,47 +582,41 @@
             <div class="col-lg-8">
   <form id="meu-form" action="https://formspree.io/f/mzdoydvk" method="POST" class="php-email-form">
     <div class="row gy-4">
-
       <div class="col-md-6">
         <input type="text" name="name" class="form-control" placeholder="Seu Nome" required="">
       </div>
-
       <div class="col-md-6">
         <input type="email" class="form-control" name="email" placeholder="Seu Email" required="">
       </div>
-
       <div class="col-md-12">
         <input type="text" class="form-control" name="subject" placeholder="Assunto" required="">
       </div>
-
       <div class="col-md-12">
         <textarea class="form-control" name="message" rows="6" placeholder="Mensagem" required=""></textarea>
       </div>
-
       <div class="col-md-12 text-center">
-        <div class="loading" style="display:none;">Enviando...</div>
-        <div class="error-message" style="display:none;"></div>
-        <div class="sent-message" style="display:none;">✅ Mensagem enviada com sucesso! Entrarei em contato em breve.</div>
-        <button type="submit">Enviar Mensagem</button>
+        <div class="loading" style="display:none; color: var(--accent-color); padding: 10px;">Enviando...</div>
+        <div class="sent-message" style="display:none; color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 15px;">✅ Mensagem enviada com sucesso! Entrarei em contato em breve.</div>
+        <button type="submit" id="submit-btn">Enviar Mensagem</button>
       </div>
-
     </div>
   </form>
 </div>
 
 <script>
+(function() {
   var form = document.getElementById('meu-form');
+  var loading = form.querySelector('.loading');
+  var sent = form.querySelector('.sent-message');
+  var btn = document.getElementById('submit-btn');
   
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    var loading = form.querySelector('.loading');
-    var sent = form.querySelector('.sent-message');
-    var button = form.querySelector('button');
-    
     loading.style.display = 'block';
-    button.disabled = true;
-    button.textContent = 'Enviando...';
+    sent.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
     
     fetch(form.action, {
       method: 'POST',
@@ -634,22 +628,23 @@
         loading.style.display = 'none';
         sent.style.display = 'block';
         form.reset();
-        button.textContent = 'Enviar Mensagem';
-        button.disabled = false;
+        btn.textContent = 'Enviar Mensagem';
+        btn.disabled = false;
       } else {
-        alert('Erro ao enviar. Tente novamente.');
         loading.style.display = 'none';
-        button.textContent = 'Enviar Mensagem';
-        button.disabled = false;
+        btn.textContent = 'Enviar Mensagem';
+        btn.disabled = false;
+        alert('Erro ao enviar. Tente novamente.');
       }
     })
-    .catch(function(error) {
-      alert('Erro de conexão. Verifique sua internet.');
+    .catch(function() {
       loading.style.display = 'none';
-      button.textContent = 'Enviar Mensagem';
-      button.disabled = false;
+      btn.textContent = 'Enviar Mensagem';
+      btn.disabled = false;
+      alert('Erro de conexão. Verifique sua internet.');
     });
   });
+})();
 </script>
 
           </div>
